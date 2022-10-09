@@ -1,5 +1,6 @@
 const fullGrid = document.querySelector(".container");
 const button = document.querySelector("button");
+const RGB = document.querySelector(".RGB");
 
 
 
@@ -22,7 +23,8 @@ let userPrompt = function(){
     let input = prompt ("select a grid size");
     let integer = parseInt(input, 10);
     if (integer > 100){
-        console.log("Select a number smaller than 100");
+        alert("Number must be smaller than or equal to 100");
+        return;
     }
     let n = (integer * integer);
     console.log(n);
@@ -35,7 +37,7 @@ let userPrompt = function(){
     }
 
     const boxes = fullGrid.querySelectorAll(".cube");
-boxes.forEach(box => box.addEventListener("mouseover", () => {
+    boxes.forEach(box => box.addEventListener("mouseover", () => {
     box.style.backgroundColor = "black";
 }))
 
@@ -44,6 +46,19 @@ boxes.forEach(box => box.addEventListener("mouseover", () => {
 button.addEventListener("click", userPrompt);
 
 
+let changeColor = function(){
+    console.log("tree")
+    const boxes = fullGrid.querySelectorAll(".cube");
+    boxes.forEach(box => box.addEventListener("mouseover", () => {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    box.style.backgroundColor = "#" + randomColor;
+}))
+
+    
+}
+
+
+RGB.addEventListener("click", changeColor);
 
 
 
