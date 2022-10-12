@@ -1,6 +1,8 @@
 const fullGrid = document.querySelector(".container");
 const button = document.querySelector("button");
 const RGB = document.querySelector(".RGB");
+const reset = document.querySelector(".reset");
+const black = document.querySelector(".black");
 
 
 
@@ -47,20 +49,33 @@ button.addEventListener("click", userPrompt);
 
 
 let changeColor = function(){
-    console.log("tree")
     const boxes = fullGrid.querySelectorAll(".cube");
     boxes.forEach(box => box.addEventListener("mouseover", () => {
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
     box.style.backgroundColor = "#" + randomColor;
 }))
-
-    
-}
-
-
+};
 RGB.addEventListener("click", changeColor);
 
 
 
 
+let clearGrid = function(){
+    const boxes = fullGrid.querySelectorAll(".cube");
+    boxes.forEach(box => box.style.backgroundColor = "white");
+}
+
+reset.addEventListener("click", clearGrid);
+
+let color = "rgb(0, 0, 0)";
+
+let scale = function(){
+    const boxes = fullGrid.querySelectorAll(".cube");
+    boxes.forEach(box => box.addEventListener("mouseover", () => {
+    box.style.backgroundColor = "black";
+    
+}))
+};
+
+black.addEventListener("click", scale);
 
