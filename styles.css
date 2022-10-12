@@ -1,3 +1,11 @@
+
+@font-face {
+    font-family: 'EthnocentricRg-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('EthnocentricRg-Regular'), url('ethnocentric rg.woff') format('woff');
+}
+
 .mainBody{
     display: flex;
     flex-direction: column;
@@ -48,9 +56,3 @@ h1, button{
 
 }
 
-@font-face {
-    font-family: 'EthnocentricRg-Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('EthnocentricRg-Regular'), url('ethnocentric rg.woff') format('woff');
-}
